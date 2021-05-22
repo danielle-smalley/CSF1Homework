@@ -18,11 +18,50 @@ namespace CSF1Homework
              * The conversion is done by taking the Fahrenheit temp, subtracting 32, then diving by 9/5. (cel = (fah - 32) / (9.0/5.0)
              * 3. Then, build out a menu that allows the user to choose whether they wish to convert Celsius to Fahrenheit or Fahrenheit to Celsius.
              * Remember, you'll want to capture the user's input, and then utilize the two pieces of functionality you built (steps 1 & 2) to show the result.
-             * 4. Lastly, extend the functionality to ask if they have anotherh conversion once you have shown them their initial result. Reload the menu if they choose yes.
+             * 4. Lastly, extend the functionality to ask if they have another conversion once you have shown them their initial result. Reload the menu if they choose yes.
              */
 
-            Console.WriteLine("Please enter a temperature in Celsius so I can convert it to Fahrenheit for you: ");
-            int userCelsiusTemp = Convert.ToInt32(Console.ReadLine());
+            bool repeatMenu = true;
+            do
+            {
+                Console.WriteLine("Welcome to the temperature converter!\n" +
+                    "Please choose your conversion option:\n" +
+                    "C)elsius to Fahrenheit\n" +
+                    "F)ahrenheit to Celsius\n" +
+                    "Esc) to to Exit");
+                ConsoleKey userChoice = Console.ReadKey().Key;
+                Console.Clear();
+
+                switch (userChoice)
+                {
+                    case ConsoleKey.C:
+                        Console.WriteLine("Please enter a temperature in Celsius so I can convert it to Fahrenheit for you: ");
+                        int userCelsiusTemp = Convert.ToInt32(Console.ReadLine());
+
+                        decimal celsiusToFahrenheit = userCelsiusTemp * 9 / 5 + 32;
+                        Console.WriteLine($"{userCelsiusTemp} degrees Celsius is " + celsiusToFahrenheit + " degrees Fahrenheit");
+                        break;
+
+                    case ConsoleKey.F:
+                        Console.WriteLine("Please enter a temperature in Fahrenheit so I can convert it to Celsius for you: ");
+                        int userFahrenheitTemp = Convert.ToInt32(Console.ReadLine());
+
+                        decimal fahrenheitToCelsius = (userFahrenheitTemp - 32) / (9.0m / 5.0m);
+                        Console.WriteLine($"{userFahrenheitTemp} degrees Fahrenheit is " + fahrenheitToCelsius + " degrees Celsius");
+
+                        break;
+
+                    case ConsoleKey.Escape:
+                        Console.WriteLine("Thank you for using the temperature converter. Come back soon!");
+                        repeatMenu = false;
+                        break;
+
+                    default: //this is if they don't choose one of the options listed
+                        Console.WriteLine("Invalid entry. Please try again.");
+                        break;
+                }//end switch
+            } while (repeatMenu);
+            //end do loop
 
         }//end main
     }//end class
