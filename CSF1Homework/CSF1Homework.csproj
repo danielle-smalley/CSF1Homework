@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RequiredATMApplication\ATM.cs" />
     <Compile Include="WarmUps\FruitLoop1.cs" />
     <Compile Include="WarmUps\Login.cs" />
     <Compile Include="WarmUps\MadLib.cs" />
@@ -57,7 +58,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BonusChallenges\" />
-    <Folder Include="RequiredATMApplication\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
