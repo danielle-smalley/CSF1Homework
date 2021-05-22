@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>CSF1Homework.MadLib</StartupObject>
+    <StartupObject>CSF1Homework.FruitLoop1</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

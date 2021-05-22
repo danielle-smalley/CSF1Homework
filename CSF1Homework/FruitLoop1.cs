@@ -10,7 +10,7 @@ namespace CSF1Homework
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Warm-Up Exercise: Fruit Loops Part 1");
+            Console.WriteLine("Homework: Fruit Loops Part 1 and 2");
             /*
              * Warm-Up Exercise - Fruit Loops
              * Declare and initialize an array of any six fruit names (as text).
