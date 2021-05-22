@@ -20,14 +20,6 @@ namespace CSF1Homework
              * Repeat the FruitLoop1 exercise, but for each of the fruit names that you display, on the next line dislpay a number of periods that is equal to the number of the index of the array.
              */
 
-            //string[] fruits = new string[6]; //declaration
-            //fruits[0] = "lime"; //initialization
-            //fruits[1] = "orange";
-            //fruits[2] = "lemon";
-            //fruits[3] = "strawberry";
-            //fruits[4] = "watermelon";
-            //fruits[6] = "grape";
-
             string[] fruits = { "lime", "orange", "lemon", "strawberry", "watermelon", "grape" };
 
             for (int i = 0; i < fruits.Length; i++)
@@ -59,19 +51,6 @@ namespace CSF1Homework
                 }//end if
 
             }//end for loop
-
-
-
-
-            //string[] fruits = {"lime", "orange", "lemon", "strawberry", "watermelon", "grape"};
-
-            //Console.WriteLine("Here are the fruits we have: ");
-            //int fruit = (Convert.ToInt32(fruits));
-
-            //for (int i = 0; i <= 6; i++)
-            //{
-            //    Console.WriteLine(fruits);
-            //}
 
         }//end main
     }//end class
