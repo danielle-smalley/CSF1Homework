@@ -125,7 +125,7 @@ namespace CSF1Homework.RequiredATMApplication
                         break;
 
                     }//end switch
-            } while (repeatMenu && accountNumberCorrect == true && pinCorrect == true); //end do
+            } while (repeatMenu ==true && accountNumberCorrect == true && pinCorrect == true); //end do
         }//end if
 
 
