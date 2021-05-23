@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>CSF1Homework.BonusChallenges.GradesLoop</StartupObject>
+    <StartupObject>CSF1Homework.BonusChallenges.InterestCalc</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BonusChallenges\GradesLoop.cs" />
+    <Compile Include="BonusChallenges\InterestCalc.cs" />
     <Compile Include="BonusChallenges\Powers.cs" />
     <Compile Include="RequiredATMApplication\ATM.cs" />
     <Compile Include="RequiredATMApplication\test.cs" />
