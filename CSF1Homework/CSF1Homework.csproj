@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>CSF1Homework.BonusChallenges.InterestCalc</StartupObject>
+    <StartupObject>CSF1Homework.BonusChallenges.FizzBuzz</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BonusChallenges\FizzBuzz.cs" />
     <Compile Include="BonusChallenges\GradesLoop.cs" />
     <Compile Include="BonusChallenges\InterestCalc.cs" />
     <Compile Include="BonusChallenges\Powers.cs" />
