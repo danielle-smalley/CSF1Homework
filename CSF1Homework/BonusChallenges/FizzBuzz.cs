@@ -23,22 +23,27 @@ namespace CSF1Homework.BonusChallenges
             Console.WriteLine("Please enter a whole number greater than 1: ");
             int endingNumber = Convert.ToInt32(Console.ReadLine());
 
-            for (int i = 0; i <= endingNumber; i++)
+            for (int i = 1; i <= endingNumber; i++)
             {
-                if (i % 3 == 0 && i % 5 == 0)
+                if (i % 3 == 0 && i % 5 == 0) //if both divisible by 3 & 5, fizzbuzz
                 {
                     Console.WriteLine("FizzBuzz");
                 }//end if
 
-                else if (i % 3 == 0)
+                else if (i % 3 == 0)   //if divisible by 3, fizz
                 {
                     Console.WriteLine("Fizz");
                 }//end else if
 
-                else if (i % 5 == 0)
+                else if (i % 5 == 0) //if divisible by 5, buzz
                 {
                     Console.WriteLine("Buzz");
                 }//end else if
+
+                else
+                {
+                    Console.WriteLine(i); //for all numbers in between 1 and the ending number the user input.
+                }//end else
             }//end for
 
 

@@ -33,19 +33,19 @@ namespace CSF1Homework.BonusChallenges
 
             // decimal totalAmount = beginningBalance * interestRate * years;
 
-            int annualCompound = 0;
-            decimal years = 0;
+            //int annualCompound = 0;
+            //decimal years = 0;
 
 
 
-            for (int i = 1; i < years + 1; i++)
-            {
-                //   decimal totalAmount = beginningBalance * Math.Pow(Convert.ToDecimal(1 + interestRate / annualCompound),
-                //      (annualCompound * i));
+            //for (int i = 1; i < years + 1; i++)
+            //{
+            //    //   decimal totalAmount = beginningBalance * Math.Pow(Convert.ToDecimal(1 + interestRate / annualCompound),
+            //    //      (annualCompound * i));
 
-                result = amount * Math.Pow((1 + roi / annualCompound), (annualCompound * loop));
-                Console.WriteLine("Your amount after {0} Year " + ": {1}", loop, result);
-            }
+            //    result = amount * Math.Pow((1 + roi / annualCompound), (annualCompound * loop));
+            //    Console.WriteLine("Your amount after {0} Year " + ": {1}", loop, result);
+            //}
 
          //   Console.WriteLine($"The amount you will have in {years} years is {totalAmount}.");
 
