@@ -20,6 +20,7 @@ namespace CSF1Homework.RequiredATMApplication
             bool pinCorrect = false;
             bool repeatMenu = true;
             decimal balance = 0.00m;
+            int accountAttemptCounter = 1;
 
 
             Console.WriteLine("Welcome to the Bank of C#. Please enter your account number: ");
@@ -35,15 +36,20 @@ namespace CSF1Homework.RequiredATMApplication
 
             else if (userAccountEntered != "159357")
             {
-                Console.WriteLine("Incorrect Account Number. Please try again.");
+
                 do
                 {
-                    for (int userAccountAttempt = 0; userAccountAttempt < 3; userAccountAttempt++)
-                    {
-                        Console.WriteLine("Incorrect. Please try again.");
-                    }//for
-                } while (accountNumberCorrect);
-            }
+                    Console.WriteLine("Incorrect Account Number. Please try again.");
+                    accountAttemptCounter++;
+                } while (accountAttemptCounter < 3); //end do while
+            }//end else if
+
+
+            // for (int userAccountAttempt = 0; userAccountAttempt < 3; userAccountAttempt++)
+            // {
+            //   Console.WriteLine("Incorrect. Please try again.");
+            //  accountAttemptCounter++;
+            // }//for
 
 
             Console.WriteLine("Please enter your PIN: ");
@@ -58,35 +64,40 @@ namespace CSF1Homework.RequiredATMApplication
 
             else if (userPinEntered != "8224")
             {
-                for (int pinAttempts = 0; pinAttempts < 3; pinAttempts++)
+                do
                 {
-                    Console.WriteLine("Incorrect. Please try again.");
-                }//end for
+                    for (int pinAttempts = 0; pinAttempts < 3; pinAttempts++)
+                    {
+                        Console.WriteLine("Incorrect. Please try again.");
+                        Console.ReadLine();
+                        pinAttempts++;
+                    }//end for
+                } while (userPin != 8224);
             }//end else if
 
             if (accountNumberCorrect == true && pinCorrect == true)
             {
                 Console.WriteLine("Access Granted.");
-            }//end if
 
-            do
-            {
-                Console.WriteLine("Please choose from the following menu options:\n" +
+
+                do
+                {
+                    Console.WriteLine("Please choose from the following menu options:\n" +
                         "1) Check Balance\n" +
                         "2) Make a Deposit\n" +
                         "3) Make a Withdrawal\n" +
                         "4) Log Out\n");
 
-                ConsoleKey userChoice = Console.ReadKey(true).Key;
-                switch (userChoice)
-                {
-                    case ConsoleKey.NumPad1:
-                    case ConsoleKey.D1:
+                    ConsoleKey userChoice = Console.ReadKey(true).Key;
+                    switch (userChoice)
+                    {
+                        case ConsoleKey.NumPad1:
+                        case ConsoleKey.D1:
                         Console.WriteLine($"Your current balance is: {0:c}", balance);
                         break;
 
-                    case ConsoleKey.NumPad2:
-                    case ConsoleKey.D2:
+                        case ConsoleKey.NumPad2:
+                        case ConsoleKey.D2:
                         Console.WriteLine("How much would you like to deposit? $");
                         decimal userDeposit = decimal.Parse(Console.ReadLine());
                         balance += userDeposit;
@@ -94,8 +105,8 @@ namespace CSF1Homework.RequiredATMApplication
                          $"Your balance is now {balance:c}.");
                         break;
 
-                    case ConsoleKey.NumPad3:
-                    case ConsoleKey.D3:
+                        case ConsoleKey.NumPad3:
+                        case ConsoleKey.D3:
                         Console.WriteLine("How much would you like to withdraw? $");
                         decimal userWithdrawal = decimal.Parse(Console.ReadLine());
                         balance -= userWithdrawal;
@@ -103,18 +114,19 @@ namespace CSF1Homework.RequiredATMApplication
                             $"Your balance is now {balance:c}.");
                         break;
 
-                    case ConsoleKey.NumPad4:
-                    case ConsoleKey.D4:
+                        case ConsoleKey.NumPad4:
+                        case ConsoleKey.D4:
                         Console.WriteLine("Thank you for being a Bank of C# customer. Have a wonderful day!");
                         repeatMenu = false;
                         break;
 
-                    default:
+                        default:
                         Console.WriteLine("not a valid option");
                         break;
 
-                }//end switch
-            } while (repeatMenu && accountNumberCorrect == true && pinCorrect == true);
+                    }//end switch
+            } while (repeatMenu && accountNumberCorrect == true && pinCorrect == true); //end do
+        }//end if
 
 
 

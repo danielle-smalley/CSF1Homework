@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>CSF1Homework.BonusChallenges.Powers</StartupObject>
+    <StartupObject>CSF1Homework.RequiredATMApplication.ATM</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="BonusChallenges\Powers.cs" />
     <Compile Include="RequiredATMApplication\ATM.cs" />
+    <Compile Include="RequiredATMApplication\test.cs" />
     <Compile Include="WarmUps\FruitLoop1.cs" />
     <Compile Include="WarmUps\Login.cs" />
     <Compile Include="WarmUps\MadLib.cs" />
