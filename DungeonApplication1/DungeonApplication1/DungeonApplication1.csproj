@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{37E4DF00-BBDD-46E3-9158-DF29F2295C15}</ProjectGuid>
+    <ProjectGuid>{5A4B37F2-1C40-4A37-9BE8-4E30C4CF6050}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CSF1Homework</RootNamespace>
-    <AssemblyName>CSF1Homework</AssemblyName>
+    <RootNamespace>DungeonApplication1</RootNamespace>
+    <AssemblyName>DungeonApplication1</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,9 +32,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>CSF1Homework.RequiredATMApplication.ATM</StartupObject>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,22 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BonusChallenges\Fibonacci.cs" />
-    <Compile Include="BonusChallenges\FizzBuzz.cs" />
-    <Compile Include="BonusChallenges\GradesLoop.cs" />
-    <Compile Include="BonusChallenges\InterestCalc.cs" />
-    <Compile Include="BonusChallenges\Powers.cs" />
-    <Compile Include="RequiredATMApplication\ATM.cs" />
-    <Compile Include="RequiredATMApplication\test.cs" />
-    <Compile Include="WarmUps\FruitLoop1.cs" />
-    <Compile Include="WarmUps\Login.cs" />
-    <Compile Include="WarmUps\MadLib.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WarmUps\TemperatureConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

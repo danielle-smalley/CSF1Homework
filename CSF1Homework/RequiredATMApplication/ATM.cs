@@ -12,74 +12,68 @@ namespace CSF1Homework.RequiredATMApplication
         {
             Console.Title = "Bank of C# ATM";
 
-            int accountNumber = 159357;
-            int userPin = 8224;
-            string userAccountEntered;
-            string userPinEntered;
-            bool accountNumberCorrect = false;
-            bool pinCorrect = false;
-            bool repeatMenu = true;
-            decimal balance = 0.00m;
-            int accountAttemptCounter = 1;
+            int accountNumber = 159357;  //using in account # correct logic       
+            string userAccountEntered; //using for user input
+            string userPinEntered;  //using for user input
+            bool accountNumberCorrect = false;  //using for continue to menu logic
+            bool pinCorrect = false; //using for continue to menu logic
+            bool repeatMenu = true; //using to repeat menu until user exts
+            decimal balance = 0.00m; //using as starting bal per instructions & to keep running bal
+            int accountAttemptCounter = 1; //using for incorrect account # attempts to lock out after 3
+            int pinAttemptCounter = 1; //using for incorrect PIN attempts to lock out after 3
 
 
-            Console.WriteLine("Welcome to the Bank of C#. Please enter your account number: ");
+            Console.WriteLine("Welcome to the Bank of C#. Please enter your account number: "); //welcome and get user input
             userAccountEntered = Console.ReadLine();
 
 
-            if (userAccountEntered == "159357")
+            if (userAccountEntered == "159357") //if user account is correct, move to pin
             {
                 accountNumberCorrect = true;
                 Console.WriteLine("Correct account number entered.");
             }//end if
 
 
-            else if (userAccountEntered != "159357")
+            else if (userAccountEntered != "159357") //if user account isn't correct, 3 attempts then locked out. If they get it right, move to pin
             {
 
                 do
                 {
-                    Console.WriteLine("Incorrect Account Number. Please try again.");
+                    Console.WriteLine("Incorrect Account Number. After 3 failed attempts, you will be locked out of your account.");
+                    Console.ReadLine();
                     accountAttemptCounter++;
                 } while (accountAttemptCounter < 3); //end do while
             }//end else if
 
 
-            // for (int userAccountAttempt = 0; userAccountAttempt < 3; userAccountAttempt++)
-            // {
-            //   Console.WriteLine("Incorrect. Please try again.");
-            //  accountAttemptCounter++;
-            // }//for
-
-
-            Console.WriteLine("Please enter your PIN: ");
+            if (accountNumberCorrect) //moving onto pin if account # correct
+            {
+            Console.WriteLine("Please enter your PIN: "); 
             userPinEntered = Console.ReadLine();
 
-            if (userPinEntered == "8224")
+            if (userPinEntered == "8224")  //if pin correct, moving on to menu
             {
-                pinCorrect = true;
+                    pinCorrect = true;
                 Console.WriteLine("Correct PIN entered.");
                 Console.Clear();
-            }//end if
+            }//end inner if
 
-            else if (userPinEntered != "8224")
+            else if (userPinEntered != "8224") //if pin incorrect, 3 attempts then lock out. If correct, moving onto menu
             {
                 do
                 {
-                    for (int pinAttempts = 0; pinAttempts < 3; pinAttempts++)
                     {
-                        Console.WriteLine("Incorrect. Please try again.");
-                        Console.ReadLine();
-                        pinAttempts++;
+                            Console.WriteLine("Incorrect PIN. After 3 wrong attempts you will be locked out of your account.");
+                            Console.ReadLine();
+                        pinAttemptCounter++;
                     }//end for
-                } while (userPin != 8224);
+                } while (pinAttemptCounter < 3);
             }//end else if
+            }//end out if 
 
-            if (accountNumberCorrect == true && pinCorrect == true)
+            if (accountNumberCorrect == true && pinCorrect == true) //menu section below, self explanatory
             {
                 Console.WriteLine("Access Granted.");
-
-
                 do
                 {
                     Console.WriteLine("Please choose from the following menu options:\n" +
@@ -89,16 +83,14 @@ namespace CSF1Homework.RequiredATMApplication
                         "4) Log Out\n");
 
                     ConsoleKey userChoice = Console.ReadKey(true).Key;
+                    Console.Clear();
+
                     switch (userChoice)
                     {
-                        case ConsoleKey.NumPad1:
-                        case ConsoleKey.D1:
-                            Console.WriteLine($"Your current balance is: {0:c}", balance);
-                            break;
 
                         case ConsoleKey.NumPad2:
                         case ConsoleKey.D2:
-                            Console.WriteLine("How much would you like to deposit? $");
+                            Console.Write("How much would you like to deposit? $");
                             decimal userDeposit = decimal.Parse(Console.ReadLine());
                             balance += userDeposit;
                             Console.WriteLine($"You just deposited {userDeposit:c} into account number {accountNumber}.\n " +
@@ -107,11 +99,17 @@ namespace CSF1Homework.RequiredATMApplication
 
                         case ConsoleKey.NumPad3:
                         case ConsoleKey.D3:
-                            Console.WriteLine("How much would you like to withdraw? $");
+                            Console.Write("How much would you like to withdraw? $");
                             decimal userWithdrawal = decimal.Parse(Console.ReadLine());
                             balance -= userWithdrawal;
                             Console.WriteLine($"{userWithdrawal:c} has been withdrawn from account number {accountNumber}.\n" +
                                 $"Your balance is now {balance:c}.");
+                            break;
+
+                        case ConsoleKey.NumPad1:
+                        case ConsoleKey.D1:
+                            Console.WriteLine($"Your current balance is {balance}.");
+
                             break;
 
                         case ConsoleKey.NumPad4:
@@ -123,9 +121,8 @@ namespace CSF1Homework.RequiredATMApplication
                         default:
                             Console.WriteLine("not a valid option");
                             break;
-
                     }//end switch
-                } while (repeatMenu == true && accountNumberCorrect == true && pinCorrect == true); //end do
+                } while (repeatMenu); //end do 
             }//end if
 
 
